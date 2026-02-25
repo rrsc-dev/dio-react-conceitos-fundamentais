@@ -37,10 +37,16 @@
 // export default App;
 
 /* Com função */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
   const [usuarios, setUsuarios] = useState(["A", "B", "C"]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setUsuarios([...usuarios, "D"]);
+    }, 3000);
+  }, []);
 
   return (
     <div className="App">
