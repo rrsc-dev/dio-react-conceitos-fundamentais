@@ -12,25 +12,44 @@
 
 // export default App;
 
-import React, { Component } from "react";
+/* Com classe */
+// import React, { Component } from "react";
 
-class App extends Component {
-  state = {
-    usuarios: ["A", "B", "C"],
-  };
+// class App extends Component {
+//   state = {
+//     usuarios: ["A", "B", "C"],
+//   };
 
-  render() {
-    const { usuarios } = this.state;
+//   render() {
+//     const { usuarios } = this.state;
 
-    return (
-      <div className="App">
-        <h1>Teste</h1>
-        {usuarios.map((item) => (
-          <p>{item}</p>
-        ))}
-      </div>
-    );
-  }
-}
+//     return (
+//       <div className="App">
+//         <h1>Teste</h1>
+//         {usuarios.map((item) => (
+//           <p>{item}</p>
+//         ))}
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+/* Com função */
+import React, { useState } from "react";
+
+const App = () => {
+  const [usuarios, setUsuarios] = useState(["A", "B", "C"]);
+
+  return (
+    <div className="App">
+      <h1>Teste Função</h1>
+      {usuarios.map((item) => (
+        <p>{item}</p>
+      ))}
+    </div>
+  );
+};
 
 export default App;
