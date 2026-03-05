@@ -37,20 +37,51 @@
 // export default App;
 
 /* Com função */
+// import React, { useEffect, useState } from "react";
+
+// const App = () => {
+//   const [usuarios, setUsuarios] = useState(["A", "B", "C"]);
+
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setUsuarios([...usuarios, "D"]);
+//     }, 3000);
+//   }, []);
+
+//   return (
+//     <div className="App">
+//       <h1>Teste Função</h1>
+//       {usuarios.map((item) => (
+//         <p>{item}</p>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default App;
+
 import React, { useEffect, useState } from "react";
 
 const App = () => {
+  const [usuario, setUsuario] = useState("");
   const [usuarios, setUsuarios] = useState(["A", "B", "C"]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setUsuarios([...usuarios, "D"]);
-    }, 3000);
-  }, []);
+  const handleAddUsuario = () => {
+    setUsuarios([...usuarios, usuario]);
+    setUsuario("");
+  };
 
   return (
     <div className="App">
-      <h1>Teste Função</h1>
+      <h1>Oi Teste</h1>
+      <div>
+        <input
+          value={usuario}
+          onChange={(event) => setUsuario(event.target.value)}
+        />
+        <button onClick={handleAddUsuario}>Add</button>
+      </div>
+      <hr />
       {usuarios.map((item) => (
         <p>{item}</p>
       ))}
